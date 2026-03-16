@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-zinc-950 text-white;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-zinc-950;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-zinc-800 rounded-full border-2 border-zinc-950 hover:bg-red-600 transition-colors;
+  }
+}
+
+@layer utilities {
+  .animate-in {
+    animation-duration: 500ms;
+    animation-fill-mode: both;
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slide-in-from-top {
+    from { transform: translateY(-1rem); }
+    to { transform: translateY(0); }
+  }
+
+  @keyframes slide-in-from-left {
+    from { transform: translateX(-1rem); }
+    to { transform: translateX(0); }
+  }
+
+  .fade-in { animation-name: fade-in; }
+  .slide-in-from-top-4 { animation-name: slide-in-from-top; }
+  .slide-in-from-left-4 { animation-name: slide-in-from-left; }
+  .slide-in-from-left-6 { animation-name: slide-in-from-left; transform: translateX(-1.5rem); }
+  .slide-in-from-left-8 { animation-name: slide-in-from-left; transform: translateX(-2rem); }
+  .slide-in-from-left-10 { animation-name: slide-in-from-left; transform: translateX(-2.5rem); }
+}
